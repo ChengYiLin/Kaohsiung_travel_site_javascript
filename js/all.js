@@ -12,12 +12,12 @@ get_remote_data(add_Select_region, add_travel_site, build_page_num);
 Select_region.addEventListener('change', change_content, true);
 pagination.addEventListener('click', change_page, true);
 hot_region.addEventListener('click', hot_region_quick_link, true);
-to_top_btn.addEventListener('click', scroll_to_top, true)
+to_top_btn.addEventListener('click', scroll_to_top, true);
 
 // Request Data
 function get_remote_data(add_Select_region, add_travel_site, build_page_num) {
     let xhr = new XMLHttpRequest;
-    xhr.open('get', 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97', true)
+    xhr.open('get', 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97', true);
     xhr.send(null);
     xhr.onload = function () {
         let data = JSON.parse(xhr.responseText).result.records;
@@ -44,7 +44,7 @@ function get_remote_data(add_Select_region, add_travel_site, build_page_num) {
 function add_Select_region() {
     let option_html = Select_region.innerHTML;
     for (let i = 0; i < region.length; i++) {
-        option_html += '<option value="' + i + '">' + region[i] + '</option>'
+        option_html += '<option value="' + i + '">' + region[i] + '</option>';
     }
     Select_region.innerHTML = option_html;
 }
